@@ -1,1 +1,6 @@
 website - https://openweathermap.org/api
+
+To use the above API:
+1 . Log in to the OpenWeatherMap.org
+2 . Goto API -> select Current Weather Data.
+3 . Click on the API doc and copy the API call and your API KEY.
