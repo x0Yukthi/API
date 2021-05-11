@@ -4,7 +4,8 @@ import requests
 
 def getWeather(canvas):
     city = textfield.get()
-    api = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=ec7f6411449f547f74e9381d9db0dadd"
+    #for appid give the api key
+    api = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="
     json_data = requests.get(api).json()
     cond = json_data['weather'][0]['main']
     temp = int(json_data['main']['temp'] - 273.15)
@@ -15,6 +16,7 @@ def getWeather(canvas):
     speed = json_data['wind']['speed']
     sunrise = time.strftime("%I:%M:%S",time.gmtime(json_data['sys']['sunrise'] - 21600))
     sunset = time.strftime("%I:%M:%S",time.gmtime(json_data['sys']['sunset'] - 21600))
+    
     final_info = cond + "\n" + str(temp) + "°C" 
     final_data = "\n"+ "Min Temp: " + str(min_temp) + "°C" + "\n" + "Max Temp: " + str(max_temp) + "°C" +"\n" + "Pressure: " + str(pressure) + "\n" +"Humidity: " + str(humidity) + "\n" +"Wind Speed: " + str(speed) + "\n" + "Sunrise: " + sunrise + " AM"+"\n" + "Sunset: " + sunset+" PM"
     label1.config(text = final_info)
