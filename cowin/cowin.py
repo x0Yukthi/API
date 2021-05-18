@@ -1,5 +1,6 @@
 import requests
-
+import time
+from playsound import playsound
 
 def getStates():
     # to get the covid vaccine session details
@@ -25,4 +26,12 @@ def getStates():
         print('Available slots', i['slots'])
 
 
-getStates()
+if __name__ == '__main__':
+    while True:
+        getStates()
+        #to play a notification sound
+        playsound("D:\\api\\cowin\\SmsRingtone1.mp3")
+        time_wait = 5
+        print(f'\nWating for {time_wait} minutes ....')
+        time.sleep(time_wait * 60)
+
