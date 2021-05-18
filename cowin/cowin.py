@@ -14,7 +14,7 @@ def getStates():
     print(f'Session Details')
     for i in my_json['sessions']:
         c = c + 1
-        print('-'*100)
+        print('-' * 100)
         print('Place: ', c)
         print("center id: ", i['center_id'], "\nCenter Name:", i['name'], '\nAdrresss: ', i['address'], '\nDistrict: ',
               i['district_name'], '\nState: ', i['state_name'], '\nPincode: ', i['pincode'])
